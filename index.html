@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
     <title>Social media dashboard</title>
 </head>
 <body>
@@ -15,165 +18,176 @@
         </div>
         <div class="dark-mode">
             <p>Dark Mode</p>
+            <span class="switch"></span>
         </div>
     </header>
     <main>
         <section>
-            <article>
-                <div class="icon-handle">
+            <article class="fb__border">
+                <div class="icon__handle">
                     <img src="./images/icon-facebook.svg" alt="facebook">
                     <span> @nathanf</span>
                 </div>
-                <h2>1987</h2>
-                <p>Followers</p>
-                <div class="image-text">
+                <div class="card__text">
+                    <h2>1987</h2>
+                    <p class='uppercase__text'>Followers</p>
+                </div>
+                <div class="image__text">
                     <img src="./images/icon-up.svg" alt="icon-up">
                     <span>12 Today</span>
                 </div>
             </article>
-            <article>
-                <div class="icon-handle">
+            <article class="twitter__border">
+                <div class="icon__handle">
                     <img src="./images/icon-twitter.svg" alt="twitter">
                     <span> @nathanf</span>
                 </div>
-                <h2>1044</h2>
-                <p>Followers</p>
-                <div class="image-text">
+                <div class="card__text">
+                    <h2>1044</h2>
+                    <p class='uppercase__text'>Followers</p>
+                </div>
+                <div class="image__text">
                     <img src="./images/icon-up.svg" alt="icon-up">
                     <span>99 Today</span>
                 </div>
             </article>
-            <article>
-                <div class="icon-handle">
+            <article class="insta__border">
+                <div class="icon__handle">
                     <img src="./images/icon-instagram.svg" alt="instagram">
                     <span> @realnathanf</span>
                 </div>
-                <h2>11k</h2>
-                <p>Followers</p>
-                <div class="image-text">
+                <div class="card__text">
+                    <h2>11k</h2>
+                    <p class='uppercase__text'>Followers</p>
+                </div>
+                <div class="image__text">
                     <img src="./images/icon-up.svg" alt="icon-up">
                     <span>1099 Today</span>
                 </div>
             </article>
-            <article>
-                <div class="icon-handle">
+            <article class="youtube__border">
+                <div class="icon__handle">
                     <img src="./images/icon-youtube.svg" alt="youtube">
                     <span> Nathan F.</span>
                 </div>
-                <h2>8239</h2>
-                <p>Subscribers</p>
-                <div class="image-text">
+                <div class="card__text">
+                    <h2>8239</h2>
+                    <p class='uppercase__text'>Subscribers</p>
+                </div>
+                <div class="image__text">
                     <img src="./images/icon-down.svg" alt="icon-down">
                     <span>144 Today</span>
                 </div>
             </article>
         </section>
+        <h2>Overview - Today</h2>
         <section>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Page Views</p>
                     <img src="./images/icon-facebook.svg" alt="facebook">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>87</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages image__text">
                         <img src="./images/icon-up.svg" alt="icon-up">
-                        <p>3%</p>
+                        <span><sub>3%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Likes</p>
                     <img src="./images/icon-facebook.svg" alt="facebook">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>52</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages bright--red">
                         <img src="./images/icon-down.svg" alt="icon-down">
-                        <p>2%</p>
+                        <span><sub>2%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Likes</p>
                     <img src="./images/icon-instagram.svg" alt="instagram">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>5462</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages image__text">
                         <img src="./images/icon-up.svg" alt="icon-up">
-                        <p>2257%</p>
+                        <span><sub>2257%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Profile Views</p>
                     <img src="./images/icon-instagram.svg" alt="instagram">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>52k</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages image__text">
                         <img src="./images/icon-up.svg" alt="icon-up">
-                        <p>1375%</p>
+                        <span><sub>1375%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Retweets</p>
                     <img src="./images/icon-twitter.svg" alt="twitter">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>117</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages image__text">
                         <img src="./images/icon-up.svg" alt="icon-up">
-                        <p>303%</p>
+                        <span><sub>303%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Likes</p>
                     <img src="./images/icon-twitter.svg" alt="twitter">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>507</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages image__text">
                         <img src="./images/icon-up.svg" alt="icon-up">
-                        <p>553%</p>
+                        <span><sub>553%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Likes</p>
                     <img src="./images/icon-youtube.svg" alt="youtube">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>107</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages bright--red">
                         <img src="./images/icon-down.svg" alt="icon-down">
-                        <p>19%</p>
+                        <span><sub>19%</sub></span>
                     </div>
                 </div>
             </article>
             <article>
-                <div class="upper-part">
+                <div class="upper__part">
                     <p>Total Views</p>
                     <img src="./images/icon-youtube.svg" alt="youtube">
                 </div>
-                <div class="lower-part">
+                <div class="lower__part">
                     <h3>1407</h3>
-                    <div class="images-percentages">
+                    <div class="images-percentages bright--red">
                         <img src="./images/icon-down.svg" alt="icon-down">
-                        <p>12%</p>
+                        <span><sub>12%</sub></span>
                     </div>
                 </div>
             </article>
         </section>
+        <script src="index.js"></script>
     </main>
 </body>
 </html>
