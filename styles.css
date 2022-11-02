@@ -1,5 +1,5 @@
 :root{
-/* Liight Theme Card Colors */
+/* Light Theme Card Colors */
 --facebook-clr: hsl(208 92% 53%);
 --twitter-clr: hsl(203 89% 53%);
 --instagram-clr: linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%));
@@ -7,8 +7,15 @@
 --lime-green: hsl(163 72% 41%);
 --bright-red: hsl(356 69% 56%);
 
+/* Toggle Switch colors */
 --toggle-dark-clr: linear-gradient(hsl(210 78% 56%), hsl(146 68% 55%));
 --toggle-light-clr: hsl(230 22% 74%);
+
+/* Other css variables */
+--border: 3px solid;
+--flex-display:flex;
+--j-c-c: center; /* justify-content:center */
+--a-i-c: center; /* align-items:center */
 
 /* Dark Theme colors */
 --very-dark-blue-clr: hsl(230 17% 14%);
@@ -22,7 +29,9 @@
 --light-grayish-card-bg: hsl(227, 47%, 96%);
 --dark-grayish--text-clr: hsl(228 12% 44%);
 }
-*,*::before,*::after{
+*,
+*::before,
+*::after{
     box-sizing:border-box;
 }
 *{
@@ -36,7 +45,6 @@ body{
     font-size: 14px;
     font-family: 'Inter', sans-serif;
 }
-
 header, main{
     width:80%;
     margin:auto;
@@ -45,7 +53,7 @@ header, main{
     margin-block:1rem;
  }
 header{
-    display: flex;
+    display: var(--flex-display);
     justify-content: space-between;
     margin-bottom: 2rem;
 }
@@ -59,10 +67,10 @@ header,section + section{
 }
 article{
     background: var(--light-grayish-card-bg);
-    display:flex;
+    display:var(--flex-display);
     flex-direction:column;
-    justify-content: center;
-    align-items: center;
+    justify-content: var(--j-c-c);
+    align-items: var(--a-i-c);
     gap:1.2rem;
     padding: 1.5rem;
     border-radius: 0.3rem;
@@ -71,25 +79,26 @@ article h2{
     font-size: 2.5rem;
     font-weight: 700;
 }
-.icon__handle, .image__text{
-    display: flex;
-    align-items: center;
+.icon__handle, 
+.image__text{
+    display: var(--flex-display);
+    align-items: var(--a-i-c);
     gap:0.5rem;
 }
 .uppercase__text{
     text-transform: uppercase;
 }
 .fb__border{
-    border-top:3px solid var(--facebook-clr);
+    border-top:var(--border) var(--facebook-clr);
 }
 .twitter__border{
-    border-top:3px solid var(--twitter-clr);
+    border-top: var(--border) var(--twitter-clr);
 }
 .insta__border{
-    border-top:3px solid linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%));
+    border-top: var(--border) linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%));
 }
 .youtube__border{
-    border-top:3px solid var(--youtube-clr);
+    border-top:var(--border) var(--youtube-clr);
 }
 .image__text{
     color:var(--lime-green)
@@ -98,9 +107,9 @@ article h2{
     color:var(--bright-red)
 }
 .upper__part{
-    display: flex;
+    display: var(--flex-display);
     justify-content: space-between;
-    align-items: center;
+    align-items: var(--a-i-c);
     width:100%;
 }
 .upper__part > p{
@@ -121,12 +130,12 @@ article h3{
 }
 /* Dark mode styles */
 .dark-mode{
-    display: flex;
-    align-items: center;
+    display: var(--flex-display);
+    align-items:var(--a-i-c);
     gap:0.4rem;
 }
 .switch{
-    background-color:#999;
+    background-color:var(--toggle-light-clr);
     width:46px;
     height:23px;
     display: block;
@@ -136,7 +145,7 @@ article h3{
 }
 .switch::before{
     content:"";
-    background:white;
+    background:var(--white-clr);
     width:20px;
     height:20px;
     position:absolute;
@@ -147,15 +156,36 @@ article h3{
     transition:.4s;
 }
 .switch.dark{
-    background: #213fed;
+    background:var(--toggle-dark-clr);
 }
  .switch.dark::before{
     transform:translateX(-26px);
 }
 body.dark{
-    color:#fff;
-    background:hsl(230 17% 14%);
+    color:var(--white-clr);
+    background:var(--very-dark-blue-clr);
 }
 article.dark{
     background: var(--dark-desaturated-card-bg-blue);
+}
+@media (max-width:838px){
+    section{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:338px){
+    section{
+        grid-template-columns: 1fr;
+    }
+    header{
+        display: block;
+    }
+    .title > p{
+        margin-top: 0.5rem;
+    }
+    .dark-mode{
+        display: var(--flex-display);
+        justify-content: space-between;
+        margin-top: 1.5rem;
+    }
 }
