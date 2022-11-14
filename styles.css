@@ -2,7 +2,7 @@
 /* Light Theme Card Colors */
 --facebook-clr: hsl(208 92% 53%);
 --twitter-clr: hsl(203 89% 53%);
---instagram-clr: linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%));
+--instagram-clr: hsl(37 97% 70%);/* linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%)) */;
 --youtube-clr: hsl(348 97% 39%);
 --lime-green: hsl(163 72% 41%);
 --bright-red: hsl(356 69% 56%);
@@ -14,8 +14,8 @@
 /* Other css variables */
 --border: 3px solid;
 --flex-display:flex;
---j-c-c: center; /* justify-content:center */
---a-i-c: center; /* align-items:center */
+--jcc: center; /* justify-content:center */
+--aic: center; /* align-items:center */
 
 /* Dark Theme colors */
 --very-dark-blue-clr: hsl(230 17% 14%);
@@ -29,6 +29,7 @@
 --light-grayish-card-bg: hsl(227, 47%, 96%);
 --dark-grayish--text-clr: hsl(228 12% 44%);
 }
+/* CSS RESET */
 *,
 *::before,
 *::after{
@@ -44,98 +45,113 @@ img{
 body{
     font-size: 14px;
     font-family: 'Inter', sans-serif;
+    background: linear-gradient(var(--light-grayish-card-bg), var(--white-clr)) no-repeat;
 }
-header, main{
+/* HEADER STYLES */
+header,
+main,
+footer{
     width:80%;
-    margin:auto;
- }
- main > h2{
-    margin-block:1rem;
- }
+    margin: 0 auto;
+}
 header{
     display: var(--flex-display);
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-block:1rem;
 }
+/* MAIN HEADING STYLE */
+main > h2{
+    margin-block:1rem;
+    color:var(--dark-grayish--text-clr);
+}
+/* FIRST SECTION STYLES */
 section{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap:2rem;
 }
-header,section + section{
-    margin-top:2rem;
-}
-article{
+.card{
     background: var(--light-grayish-card-bg);
     display:var(--flex-display);
     flex-direction:column;
-    justify-content: var(--j-c-c);
-    align-items: var(--a-i-c);
+    justify-content: var(--jcc);
+    align-items: var(--aic);
     gap:1.2rem;
     padding: 1.5rem;
     border-radius: 0.3rem;
 }
-article h2{
+.card:hover{
+    background-color: var(--toggle-light-clr);
+    transition:0.3s;
+}
+.card h2{
     font-size: 2.5rem;
     font-weight: 700;
 }
-.icon__handle, 
-.image__text{
+.card__icon-handle, 
+.card__img-text{
     display: var(--flex-display);
-    align-items: var(--a-i-c);
+    align-items: var(--aic);
     gap:0.5rem;
 }
-.uppercase__text{
+.uppercase--text{
     text-transform: uppercase;
 }
-.fb__border{
+.fb--border{
     border-top:var(--border) var(--facebook-clr);
 }
-.twitter__border{
+.twitter--border{
     border-top: var(--border) var(--twitter-clr);
 }
-.insta__border{
-    border-top: var(--border) linear-gradient(to right, hsl(37 97% 70%), hsl(329 70% 58%));
+.insta--border{
+    border-top: var(--border) var(--instagram-clr);
 }
-.youtube__border{
+.youtube--border{
     border-top:var(--border) var(--youtube-clr);
 }
-.image__text{
+.card__img-text{
     color:var(--lime-green)
 }
 .bright--red{
     color:var(--bright-red)
 }
-.upper__part{
+/* SECOND SECTION STYLES */
+.card__upper-part{
     display: var(--flex-display);
     justify-content: space-between;
-    align-items: var(--a-i-c);
+    align-items: var(--aic);
     width:100%;
 }
-.upper__part > p{
+.card__upper-part > p{
     color:var(--dark-grayish--text-clr);
     font-weight: 700;
 }
-.lower__part{
+.card__lower-part{
     width:100%;
     display: flex;
     justify-content: space-between;
 }
-article h3{
+.card h3{
     font-size: 1.5rem;
     font-weight: 700;
 }
 .images-percentages{
     align-self:flex-end;
 }
+/* FOOTER STYLES */
+footer{
+    text-align: center;
+    padding-top:1rem;
+}
 /* Dark mode styles */
 .dark-mode{
     display: var(--flex-display);
-    align-items:var(--a-i-c);
+    align-items:var(--aic);
     gap:0.4rem;
 }
 .switch{
     background-color:var(--toggle-light-clr);
+    outline:2px solid var(--toggle-light-clr);
     width:46px;
     height:23px;
     display: block;
@@ -157,9 +173,11 @@ article h3{
 }
 .switch.dark{
     background:var(--toggle-dark-clr);
+    outline:none;
 }
  .switch.dark::before{
-    transform:translateX(-26px);
+    transform:translateX(-24px);
+    background-color:var(--very-dark-blue-top-bg);
 }
 body.dark{
     color:var(--white-clr);
